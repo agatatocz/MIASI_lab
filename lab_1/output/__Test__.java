@@ -6,7 +6,7 @@ import org.antlr.runtime.debug.DebugEventSocketProxy;
 public class __Test__ {
 
     public static void main(String args[]) throws Exception {
-        grammar1Lexer lex = new grammar1Lexer(new ANTLRFileStream("/home/agata/Pulpit/MIASI/output/__Test___input.txt", "UTF8"));
+        grammar1Lexer lex = new grammar1Lexer(new ANTLRFileStream("/home/agata/Pulpit/MIASI/lab_1/output/__Test___input.txt", "UTF8"));
         CommonTokenStream tokens = new CommonTokenStream(lex);
 
         grammar1Parser g = new grammar1Parser(tokens, 49100, null);

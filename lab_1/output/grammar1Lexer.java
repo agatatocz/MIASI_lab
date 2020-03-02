@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/agata/Pulpit/MIASI/grammar1.g 2020-03-01 20:24:33
+// $ANTLR 3.5.1 /home/agata/Pulpit/MIASI/lab_1/grammar1.g 2020-03-02 21:40:06
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -8,17 +8,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class grammar1Lexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int COMMENT=4;
-	public static final int DIV=5;
-	public static final int ID=6;
-	public static final int INT=7;
-	public static final int LP=8;
-	public static final int MINUS=9;
-	public static final int MUL=10;
-	public static final int NL=11;
-	public static final int PLUS=12;
-	public static final int RP=13;
-	public static final int WS=14;
+	public static final int BIT_AND=4;
+	public static final int BIT_NOT=5;
+	public static final int BIT_OR=6;
+	public static final int BIT_XOR=7;
+	public static final int BOOL=8;
+	public static final int COMMENT=9;
+	public static final int DIV=10;
+	public static final int INT=11;
+	public static final int LP=12;
+	public static final int MINUS=13;
+	public static final int MOD=14;
+	public static final int MUL=15;
+	public static final int NL=16;
+	public static final int PLUS=17;
+	public static final int RP=18;
+	public static final int WS=19;
 
 	// delegates
 	// delegators
@@ -33,85 +38,29 @@ public class grammar1Lexer extends Lexer {
 	public grammar1Lexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "/home/agata/Pulpit/MIASI/grammar1.g"; }
-
-	// $ANTLR start "ID"
-	public final void mID() throws RecognitionException {
-		try {
-			int _type = ID;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:25:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// /home/agata/Pulpit/MIASI/grammar1.g:25:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
-			{
-			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-				input.consume();
-			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				recover(mse);
-				throw mse;
-			}
-			// /home/agata/Pulpit/MIASI/grammar1.g:25:31: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
-			loop1:
-			while (true) {
-				int alt1=2;
-				int LA1_0 = input.LA(1);
-				if ( ((LA1_0 >= '0' && LA1_0 <= '9')||(LA1_0 >= 'A' && LA1_0 <= 'Z')||LA1_0=='_'||(LA1_0 >= 'a' && LA1_0 <= 'z')) ) {
-					alt1=1;
-				}
-
-				switch (alt1) {
-				case 1 :
-					// /home/agata/Pulpit/MIASI/grammar1.g:
-					{
-					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-						input.consume();
-					}
-					else {
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						recover(mse);
-						throw mse;
-					}
-					}
-					break;
-
-				default :
-					break loop1;
-				}
-			}
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "ID"
+	@Override public String getGrammarFileName() { return "/home/agata/Pulpit/MIASI/lab_1/grammar1.g"; }
 
 	// $ANTLR start "INT"
 	public final void mINT() throws RecognitionException {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:28:5: ( ( '0' .. '9' )+ )
-			// /home/agata/Pulpit/MIASI/grammar1.g:28:7: ( '0' .. '9' )+
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:53:5: ( ( '0' .. '9' )+ )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:53:7: ( '0' .. '9' )+
 			{
-			// /home/agata/Pulpit/MIASI/grammar1.g:28:7: ( '0' .. '9' )+
-			int cnt2=0;
-			loop2:
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:53:7: ( '0' .. '9' )+
+			int cnt1=0;
+			loop1:
 			while (true) {
-				int alt2=2;
-				int LA2_0 = input.LA(1);
-				if ( ((LA2_0 >= '0' && LA2_0 <= '9')) ) {
-					alt2=1;
+				int alt1=2;
+				int LA1_0 = input.LA(1);
+				if ( ((LA1_0 >= '0' && LA1_0 <= '9')) ) {
+					alt1=1;
 				}
 
-				switch (alt2) {
+				switch (alt1) {
 				case 1 :
-					// /home/agata/Pulpit/MIASI/grammar1.g:
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -125,11 +74,11 @@ public class grammar1Lexer extends Lexer {
 					break;
 
 				default :
-					if ( cnt2 >= 1 ) break loop2;
-					EarlyExitException eee = new EarlyExitException(2, input);
+					if ( cnt1 >= 1 ) break loop1;
+					EarlyExitException eee = new EarlyExitException(1, input);
 					throw eee;
 				}
-				cnt2++;
+				cnt1++;
 			}
 
 			}
@@ -143,12 +92,65 @@ public class grammar1Lexer extends Lexer {
 	}
 	// $ANTLR end "INT"
 
+	// $ANTLR start "BOOL"
+	public final void mBOOL() throws RecognitionException {
+		try {
+			int _type = BOOL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:56:5: ( ( 'true' | 'false' ) )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:56:7: ( 'true' | 'false' )
+			{
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:56:7: ( 'true' | 'false' )
+			int alt2=2;
+			int LA2_0 = input.LA(1);
+			if ( (LA2_0=='t') ) {
+				alt2=1;
+			}
+			else if ( (LA2_0=='f') ) {
+				alt2=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 2, 0, input);
+				throw nvae;
+			}
+
+			switch (alt2) {
+				case 1 :
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:56:8: 'true'
+					{
+					match("true"); 
+
+					}
+					break;
+				case 2 :
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:56:15: 'false'
+					{
+					match("false"); 
+
+					}
+					break;
+
+			}
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BOOL"
+
 	// $ANTLR start "COMMENT"
 	public final void mCOMMENT() throws RecognitionException {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:32:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:59:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
 			int alt6=2;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0=='/') ) {
@@ -182,11 +184,11 @@ public class grammar1Lexer extends Lexer {
 
 			switch (alt6) {
 				case 1 :
-					// /home/agata/Pulpit/MIASI/grammar1.g:32:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:59:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 					{
 					match("//"); 
 
-					// /home/agata/Pulpit/MIASI/grammar1.g:32:14: (~ ( '\\n' | '\\r' ) )*
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:59:14: (~ ( '\\n' | '\\r' ) )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -197,7 +199,7 @@ public class grammar1Lexer extends Lexer {
 
 						switch (alt3) {
 						case 1 :
-							// /home/agata/Pulpit/MIASI/grammar1.g:
+							// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -215,7 +217,7 @@ public class grammar1Lexer extends Lexer {
 						}
 					}
 
-					// /home/agata/Pulpit/MIASI/grammar1.g:32:28: ( '\\r' )?
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:59:28: ( '\\r' )?
 					int alt4=2;
 					int LA4_0 = input.LA(1);
 					if ( (LA4_0=='\r') ) {
@@ -223,7 +225,7 @@ public class grammar1Lexer extends Lexer {
 					}
 					switch (alt4) {
 						case 1 :
-							// /home/agata/Pulpit/MIASI/grammar1.g:32:28: '\\r'
+							// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:59:28: '\\r'
 							{
 							match('\r'); 
 							}
@@ -236,11 +238,11 @@ public class grammar1Lexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /home/agata/Pulpit/MIASI/grammar1.g:33:9: '/*' ( options {greedy=false; } : . )* '*/'
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:60:9: '/*' ( options {greedy=false; } : . )* '*/'
 					{
 					match("/*"); 
 
-					// /home/agata/Pulpit/MIASI/grammar1.g:33:14: ( options {greedy=false; } : . )*
+					// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:60:14: ( options {greedy=false; } : . )*
 					loop5:
 					while (true) {
 						int alt5=2;
@@ -261,7 +263,7 @@ public class grammar1Lexer extends Lexer {
 
 						switch (alt5) {
 						case 1 :
-							// /home/agata/Pulpit/MIASI/grammar1.g:33:42: .
+							// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:60:42: .
 							{
 							matchAny(); 
 							}
@@ -293,8 +295,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:36:5: ( ( ' ' | '\\t' | '\\r' ) )
-			// /home/agata/Pulpit/MIASI/grammar1.g:36:9: ( ' ' | '\\t' | '\\r' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:63:5: ( ( ' ' | '\\t' | '\\r' ) )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:63:9: ( ' ' | '\\t' | '\\r' )
 			{
 			if ( input.LA(1)=='\t'||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -321,8 +323,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = NL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:42:3: ( '\\n' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:42:4: '\\n'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:69:3: ( '\\n' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:69:5: '\\n'
 			{
 			match('\n'); 
 			}
@@ -341,8 +343,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = PLUS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:43:5: ( '+' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:43:7: '+'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:70:5: ( '+' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:70:7: '+'
 			{
 			match('+'); 
 			}
@@ -361,8 +363,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = MINUS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:44:6: ( '-' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:44:8: '-'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:71:6: ( '-' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:71:8: '-'
 			{
 			match('-'); 
 			}
@@ -381,8 +383,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = MUL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:45:4: ( '*' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:45:6: '*'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:72:4: ( '*' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:72:6: '*'
 			{
 			match('*'); 
 			}
@@ -401,8 +403,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = DIV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:46:4: ( '/' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:46:6: '/'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:73:4: ( '/' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:73:6: '/'
 			{
 			match('/'); 
 			}
@@ -421,8 +423,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = LP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:47:3: ( '(' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:47:5: '('
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:74:3: ( '(' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:74:5: '('
 			{
 			match('('); 
 			}
@@ -441,8 +443,8 @@ public class grammar1Lexer extends Lexer {
 		try {
 			int _type = RP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/agata/Pulpit/MIASI/grammar1.g:48:3: ( ')' )
-			// /home/agata/Pulpit/MIASI/grammar1.g:48:5: ')'
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:75:3: ( ')' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:75:5: ')'
 			{
 			match(')'); 
 			}
@@ -456,68 +458,111 @@ public class grammar1Lexer extends Lexer {
 	}
 	// $ANTLR end "RP"
 
+	// $ANTLR start "MOD"
+	public final void mMOD() throws RecognitionException {
+		try {
+			int _type = MOD;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:76:4: ( '%' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:76:6: '%'
+			{
+			match('%'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "MOD"
+
+	// $ANTLR start "BIT_OR"
+	public final void mBIT_OR() throws RecognitionException {
+		try {
+			int _type = BIT_OR;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:77:7: ( '|' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:77:9: '|'
+			{
+			match('|'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BIT_OR"
+
+	// $ANTLR start "BIT_AND"
+	public final void mBIT_AND() throws RecognitionException {
+		try {
+			int _type = BIT_AND;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:78:8: ( '&' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:78:10: '&'
+			{
+			match('&'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BIT_AND"
+
+	// $ANTLR start "BIT_XOR"
+	public final void mBIT_XOR() throws RecognitionException {
+		try {
+			int _type = BIT_XOR;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:79:8: ( '^' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:79:10: '^'
+			{
+			match('^'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BIT_XOR"
+
+	// $ANTLR start "BIT_NOT"
+	public final void mBIT_NOT() throws RecognitionException {
+		try {
+			int _type = BIT_NOT;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:80:8: ( '~' )
+			// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:80:10: '~'
+			{
+			match('~'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "BIT_NOT"
+
 	@Override
 	public void mTokens() throws RecognitionException {
-		// /home/agata/Pulpit/MIASI/grammar1.g:1:8: ( ID | INT | COMMENT | WS | NL | PLUS | MINUS | MUL | DIV | LP | RP )
-		int alt7=11;
+		// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:8: ( INT | BOOL | COMMENT | WS | NL | PLUS | MINUS | MUL | DIV | LP | RP | MOD | BIT_OR | BIT_AND | BIT_XOR | BIT_NOT )
+		int alt7=16;
 		switch ( input.LA(1) ) {
-		case 'A':
-		case 'B':
-		case 'C':
-		case 'D':
-		case 'E':
-		case 'F':
-		case 'G':
-		case 'H':
-		case 'I':
-		case 'J':
-		case 'K':
-		case 'L':
-		case 'M':
-		case 'N':
-		case 'O':
-		case 'P':
-		case 'Q':
-		case 'R':
-		case 'S':
-		case 'T':
-		case 'U':
-		case 'V':
-		case 'W':
-		case 'X':
-		case 'Y':
-		case 'Z':
-		case '_':
-		case 'a':
-		case 'b':
-		case 'c':
-		case 'd':
-		case 'e':
-		case 'f':
-		case 'g':
-		case 'h':
-		case 'i':
-		case 'j':
-		case 'k':
-		case 'l':
-		case 'm':
-		case 'n':
-		case 'o':
-		case 'p':
-		case 'q':
-		case 'r':
-		case 's':
-		case 't':
-		case 'u':
-		case 'v':
-		case 'w':
-		case 'x':
-		case 'y':
-		case 'z':
-			{
-			alt7=1;
-			}
-			break;
 		case '0':
 		case '1':
 		case '2':
@@ -528,6 +573,12 @@ public class grammar1Lexer extends Lexer {
 		case '7':
 		case '8':
 		case '9':
+			{
+			alt7=1;
+			}
+			break;
+		case 'f':
+		case 't':
 			{
 			alt7=2;
 			}
@@ -582,6 +633,31 @@ public class grammar1Lexer extends Lexer {
 			alt7=11;
 			}
 			break;
+		case '%':
+			{
+			alt7=12;
+			}
+			break;
+		case '|':
+			{
+			alt7=13;
+			}
+			break;
+		case '&':
+			{
+			alt7=14;
+			}
+			break;
+		case '^':
+			{
+			alt7=15;
+			}
+			break;
+		case '~':
+			{
+			alt7=16;
+			}
+			break;
 		default:
 			NoViableAltException nvae =
 				new NoViableAltException("", 7, 0, input);
@@ -589,79 +665,114 @@ public class grammar1Lexer extends Lexer {
 		}
 		switch (alt7) {
 			case 1 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:10: ID
-				{
-				mID(); 
-
-				}
-				break;
-			case 2 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:13: INT
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:10: INT
 				{
 				mINT(); 
 
 				}
 				break;
+			case 2 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:14: BOOL
+				{
+				mBOOL(); 
+
+				}
+				break;
 			case 3 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:17: COMMENT
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:19: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
 			case 4 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:25: WS
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:27: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 5 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:28: NL
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:30: NL
 				{
 				mNL(); 
 
 				}
 				break;
 			case 6 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:31: PLUS
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:33: PLUS
 				{
 				mPLUS(); 
 
 				}
 				break;
 			case 7 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:36: MINUS
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:38: MINUS
 				{
 				mMINUS(); 
 
 				}
 				break;
 			case 8 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:42: MUL
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:44: MUL
 				{
 				mMUL(); 
 
 				}
 				break;
 			case 9 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:46: DIV
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:48: DIV
 				{
 				mDIV(); 
 
 				}
 				break;
 			case 10 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:50: LP
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:52: LP
 				{
 				mLP(); 
 
 				}
 				break;
 			case 11 :
-				// /home/agata/Pulpit/MIASI/grammar1.g:1:53: RP
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:55: RP
 				{
 				mRP(); 
+
+				}
+				break;
+			case 12 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:58: MOD
+				{
+				mMOD(); 
+
+				}
+				break;
+			case 13 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:62: BIT_OR
+				{
+				mBIT_OR(); 
+
+				}
+				break;
+			case 14 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:69: BIT_AND
+				{
+				mBIT_AND(); 
+
+				}
+				break;
+			case 15 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:77: BIT_XOR
+				{
+				mBIT_XOR(); 
+
+				}
+				break;
+			case 16 :
+				// /home/agata/Pulpit/MIASI/lab_1/grammar1.g:1:85: BIT_NOT
+				{
+				mBIT_NOT(); 
 
 				}
 				break;
