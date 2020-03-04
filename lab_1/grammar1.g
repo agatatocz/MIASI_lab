@@ -24,7 +24,7 @@ mulOrDiv returns [Integer output]:
 			else $output/=$result3.output;
 		}
 	|
-		MOD result4=bitOperations {$output%=$result4.output;}
+		MOD result4=bitOperations {$output\%=$result4.output;}
 	))*
 ;
 catch [ArithmeticException e] {System.out.println("Division by zero is forbidden.");} 

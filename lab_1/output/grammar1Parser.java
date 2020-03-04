@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/agata/Pulpit/MIASI/lab_1/grammar1.g 2020-03-02 21:40:06
+// $ANTLR 3.5.1 /home/agata/Pulpit/MIASI/lab_1/grammar1.g 2020-03-04 11:15:03
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -41,7 +41,7 @@ public class grammar1Parser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "bitOperations", "atom", "program", "mulOrDiv", "expression"
+		"invalidRule", "mulOrDiv", "program", "expression", "bitOperations", "atom"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -423,7 +423,7 @@ public class grammar1Parser extends DebugParser {
 							result4=bitOperations();
 							state._fsp--;
 							dbg.location(27,29);
-							output =result4;
+							output%=result4;
 							}
 							break;
 
